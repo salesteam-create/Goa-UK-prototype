@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-textsize="md">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design System — Goan Association (UK)</title>
+  <meta name="description" content="The Goan-themed design system powering the Goan Association (UK) website: colours, typography and components." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true">G</span>
+        <span class="brand__name">Goan Association
+          <span class="brand__est">Design System</span>
+        </span>
+      </a>
+      <div class="nav__tools">
+        <a class="btn btn--ghost" href="index.html">← Back to homepage</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container" style="padding-block: var(--sp-5);">
+        <span class="eyebrow">The Goan design language</span>
+        <h1 style="max-width:18ch;">A warm, accessible system rooted in Goan heritage</h1>
+        <p class="lead" style="max-width:60ch;">
+          Inspired by laterite stone, azulejo tiles, the Arabian Sea and the colour
+          of Goan feasts — built for clarity and readability across every age group.
+        </p>
+      </div>
+    </section>
+
+    <!-- Colours -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head"><span class="eyebrow">Foundations</span><h2>Colour palette</h2></div>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch__chip" style="background:#c0573b"></div><div class="swatch__meta"><b>Laterite</b><code>#C0573B</code> · Primary</div></div>
+          <div class="swatch"><div class="swatch__chip" style="background:#1c5c8c"></div><div class="swatch__meta"><b>Azulejo</b><code>#1C5C8C</code> · Secondary</div></div>
+          <div class="swatch"><div class="swatch__chip" style="background:#2e9e96"></div><div class="swatch__meta"><b>Sea</b><code>#2E9E96</code> · Tertiary</div></div>
+          <div class="swatch"><div class="swatch__chip" style="background:#f2a413"></div><div class="swatch__meta"><b>Marigold</b><code>#F2A413</code> · Accent</div></div>
+          <div class="swatch"><div class="swatch__chip" style="background:#3e7c59"></div><div class="swatch__meta"><b>Palm</b><code>#3E7C59</code> · Success</div></div>
+          <div class="swatch"><div class="swatch__chip" style="background:#faf4e8;border-bottom:1px solid var(--c-line)"></div><div class="swatch__meta"><b>Sand</b><code>#FAF4E8</code> · Background</div></div>
+          <div class="swatch"><div class="swatch__chip" style="background:#2b2724"></div><div class="swatch__meta"><b>Ink</b><code>#2B2724</code> · Text</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="section section--tint">
+      <div class="container">
+        <div class="section__head"><span class="eyebrow">Foundations</span><h2>Typography</h2></div>
+        <div class="ds-block">
+          <p style="color:var(--c-ink-60);margin-bottom:var(--sp-2);"><b>Headings — Fraunces (serif)</b></p>
+          <h1 style="margin:0">Heading 1</h1>
+          <h2 style="margin:.4rem 0 0">Heading 2</h2>
+          <h3 style="margin:.4rem 0 var(--sp-3)">Heading 3</h3>
+          <p style="color:var(--c-ink-60);margin-bottom:var(--sp-1);"><b>Body — Mulish (sans), 18px base</b></p>
+          <p style="margin:0;max-width:60ch;">Built for readability across all ages, with generous line height and a larger
+            default size. Body copy stays comfortable for older readers, and the built-in text-size toggle scales the whole page.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head"><span class="eyebrow">Components</span><h2>Buttons</h2></div>
+        <div class="ds-block btn-row">
+          <button class="btn btn--primary">Primary</button>
+          <button class="btn btn--accent">Accent</button>
+          <button class="btn btn--ghost">Ghost</button>
+        </div>
+        <p style="color:var(--c-ink-60);margin-top:var(--sp-2);">All buttons are at least 48px tall — large, easy tap targets with clear focus states.</p>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="section section--tint">
+      <div class="container">
+        <div class="section__head"><span class="eyebrow">Components</span><h2>Cards &amp; events</h2></div>
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="card__icon tint-laterite" aria-hidden="true">🎭</div>
+            <h3>Pillar card</h3>
+            <p>A tinted icon, heading and short description — used for "what we do".</p>
+          </article>
+          <a class="event" href="#">
+            <div class="date-chip"><div class="date-chip__m">Jul</div><div class="date-chip__d">05</div></div>
+            <div class="event__body"><h3>Event card</h3><p class="event__meta">📍 London · 6:30pm</p></div>
+          </a>
+          <a class="news-item" href="#" style="grid-template-columns:90px 1fr;">
+            <span class="news-thumb" style="background:linear-gradient(135deg,var(--c-sea),var(--c-azulejo))"></span>
+            <span><span class="tag">News</span><h3 style="font-size:1.05rem;margin:0;">News item</h3></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pattern -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head"><span class="eyebrow">Texture</span><h2>Azulejo tile pattern</h2></div>
+        <div class="azulejo" style="height:160px;border-radius:var(--radius);"></div>
+        <p style="color:var(--c-ink-60);margin-top:var(--sp-2);">A subtle Portuguese-tile-inspired pattern used for CTA bands and the footer.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer azulejo">
+    <div class="footer__bar">
+      <div class="container">
+        <span>© 1966–2026 Goan Association (UK).</span>
+        <span><a href="index.html">Homepage</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
