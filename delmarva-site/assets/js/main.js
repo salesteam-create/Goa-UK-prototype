@@ -163,7 +163,7 @@
     tick(); setInterval(tick, 1000);
   });
 
-  /* ---------- Reels (center emphasis + video modal) ---------- */
+  /* ---------- Reels (centre reel autoplays muted, dots, mute toggle) ---------- */
   $$(".reels").forEach((root) => {
     const track = root.querySelector(".reels__track");
     const reels = $$(".reel", track);
@@ -180,12 +180,37 @@
     root.querySelector(".rail__next")?.addEventListener("click", () => track.scrollBy({ left: stepW(), behavior: "smooth" }));
     root.querySelector(".rail__prev")?.addEventListener("click", () => track.scrollBy({ left: -stepW(), behavior: "smooth" }));
     setTimeout(() => { track.scrollLeft = (track.scrollWidth - track.clientWidth) / 2; center(); }, 60);
-    reels.forEach((r) => r.addEventListener("click", () => {
-      const m = $("#video-modal"); if (!m) return;
-      m.querySelector(".modal__box").innerHTML = `<button class="modal__close iconbtn" data-close aria-label="Close">✕</button><div style="position:relative;padding-top:56.25%"><iframe src="https://www.youtube-nocookie.com/embed/${r.dataset.yt}?autoplay=1&rel=0" title="${r.dataset.title}" allow="autoplay; encrypted-media" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>`;
-      m.querySelector("[data-close]").addEventListener("click", closeAll);
-      m.classList.add("is-open"); scrim && scrim.classList.add("is-on");
-    }));
+    /* Centre reel autoplays muted (YouTube, no controls); others show their still. */
+    const dots = root.querySelector(".reels__dots");
+    if (dots) reels.forEach((r, k) => { const d = document.createElement("button"); d.setAttribute("aria-label", "Video " + (k + 1)); d.addEventListener("click", () => go(r)); dots.appendChild(d); });
+    const go = (r) => track.scrollTo({ left: r.offsetLeft - (track.clientWidth - r.offsetWidth) / 2, behavior: "smooth" });
+    let muted = true, live = null;
+    const send = (fr, func) => { try { fr.contentWindow.postMessage(JSON.stringify({ event: "command", func, args: [] }), "*"); } catch (e) {} };
+    const play = (r) => {
+      if (live === r) return;
+      reels.forEach((x) => { const fr = x.querySelector("iframe"); if (fr) fr.remove(); const m = x.querySelector(".reel__mute"); if (m) m.remove(); });
+      live = r; if (!r) return;
+      const id = r.dataset.yt;
+      const fr = document.createElement("iframe");
+      fr.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${id}&playsinline=1&modestbranding=1&rel=0&enablejsapi=1`;
+      fr.allow = "autoplay; encrypted-media; picture-in-picture"; fr.title = r.dataset.title; fr.tabIndex = -1;
+      fr.addEventListener("load", () => { fr.classList.add("is-on"); if (!muted) send(fr, "unMute"); });
+      r.appendChild(fr);
+      const m = document.createElement("span"); m.className = "reel__mute"; m.setAttribute("role", "button"); m.tabIndex = 0;
+      const paint = () => { m.innerHTML = muted ? '<svg viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="m16 9 5 6m0-6-5 6"/></svg>' : '<svg viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>'; m.setAttribute("aria-label", muted ? "Unmute video" : "Mute video"); };
+      paint();
+      const toggle = (e) => { e.stopPropagation(); muted = !muted; send(fr, muted ? "mute" : "unMute"); paint(); };
+      m.addEventListener("click", toggle); m.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") toggle(e); });
+      r.appendChild(m);
+    };
+    const sync = () => {
+      const c = reels.find((r) => r.classList.contains("is-center"));
+      if (dots) $$("button", dots).forEach((d, k) => d.classList.toggle("is-on", reels[k] === c));
+      clearTimeout(root._t); root._t = setTimeout(() => play(c), 180);
+    };
+    track.addEventListener("scroll", () => requestAnimationFrame(sync), { passive: true });
+    setTimeout(sync, 120);
+    reels.forEach((r) => r.addEventListener("click", () => { if (!r.classList.contains("is-center")) go(r); }));
   });
 
   /* ---------- Hotspots (tap on touch) ---------- */

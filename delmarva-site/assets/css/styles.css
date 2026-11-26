@@ -777,3 +777,16 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
   .feature--pin .feature__cards { margin-top: -240px; }
   .feature--pin .btn { opacity: 1 !important; }
 }
+
+/* Reels: autoplaying centre video */
+.reel { cursor: pointer; }
+.reel.is-center { cursor: default; }
+.reel iframe { opacity: 0; transition: opacity .5s; pointer-events: none; transform: scale(1.35); }
+.reel iframe.is-on { opacity: 1; }
+.reel__label { z-index: 3; }
+.reel__mute { position: absolute; right: 14px; bottom: 14px; z-index: 4; width: 40px; height: 40px; border-radius: 50%; background: rgba(40,40,40,.55); backdrop-filter: blur(4px); display: grid; place-items: center; cursor: pointer; }
+.reel__mute svg { width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.reel__mute svg path:first-child { fill: #fff; stroke: none; }
+.reel__mute:hover { background: rgba(20,20,20,.75); }
+.reels__dots { padding-top: 22px; }
+.reels__dots button { width: 7px; height: 7px; }
