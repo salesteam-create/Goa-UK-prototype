@@ -332,21 +332,21 @@
   const scrim = document.querySelector(".scrim");
   const G = "assets/img/gallery/";
   const P = [
-    { t: "30' x 40' x 12' Garage & Workshop", v: "Garage · built or kit", p: "From $38,900", i: G + "g14.jpg", u: "product.html", k: "garage workshop 30x40 shop 3 car", top: 1 },
-    { t: "24' x 24' x 10' Garage", v: "2-car garage", p: "From $24,900", i: G + "g03.jpg", u: "product.html", k: "garage 24x24 2 car small", top: 1 },
+    { t: "30' x 40' x 12' Garage & Workshop", v: "Garage · built or kit", p: "From $38,900", i: "assets/img/products/shop-30x40.jpg", u: "product.html", k: "garage workshop 30x40 shop 3 car", top: 1 },
+    { t: "24' x 24' x 10' Garage", v: "2-car garage", p: "From $24,900", i: "assets/img/products/garage-2car.jpg", u: "product.html", k: "garage 24x24 2 car small", top: 1 },
     { t: "The Bohemia barndo", v: "576 sq ft · 1 bed", p: "Starting at $129,000", i: "assets/img/bohemia-r.jpg", u: "index.html#barndos", k: "barndo home adu bohemia under 200k house", top: 1 },
-    { t: "40' x 60' x 14' Equipment Building", v: "Farm & ag", p: "From $58,400", i: G + "g47.jpg", u: "product.html", k: "farm ag equipment 40x60 storage tractor", top: 1 },
+    { t: "40' x 60' x 14' Equipment Building", v: "Farm & ag", p: "From $58,400", i: "assets/img/products/equipment.jpg", u: "product.html", k: "farm ag equipment 40x60 storage tractor", top: 1 },
     { t: "The Sassafras barndo", v: "1,900+ sq ft · 3 bed", p: "Starting at $439,000", i: "assets/img/sassafras.jpg", u: "index.html#barndos", k: "barndo home sassafras family house two story" },
-    { t: "24' x 32' x 14' Tall Garage", v: "Black Friday −$1,000", p: "$35,400", i: G + "g19.jpg", u: "product.html", k: "garage tall rv camper lift 24x32 sale" },
+    { t: "24' x 32' x 14' Tall Garage", v: "Black Friday −$1,000", p: "$35,400", i: "assets/img/products/garage-tall.jpg", u: "product.html", k: "garage tall rv camper lift 24x32 sale" },
     { t: "The Tuckahoe barndo", v: "980 sq ft · 2 bed", p: "Starting at $199,000", i: "assets/img/barndo-stone-front.jpg", u: "index.html#barndos", k: "barndo home tuckahoe under 200k house" },
     { t: "The Choptank barndo", v: "1,200 sq ft · 3 bed", p: "Starting at $296,000", i: "assets/img/choptank-r.jpg", u: "index.html#barndos", k: "barndo home choptank waterfront house" },
     { t: "The Chester barndo", v: "3,338 sq ft · 4 bed", p: "Starting at $625,000", i: "assets/img/barndo-cutout.jpg", u: "index.html#barndos", k: "barndo home chester large family house" },
-    { t: "40' x 64' x 14' Shop with Porch", v: "Workshop", p: "From $61,900", i: G + "g58.jpg", u: "product.html", k: "workshop shop porch 40x64 business" },
-    { t: "36' x 72' x 14' RV & Boat Storage", v: "Storage", p: "From $71,500", i: G + "g52.jpg", u: "product.html", k: "rv boat storage 36x72 camper" },
-    { t: "40' x 80' x 16' Farm Storage", v: "Farm & ag", p: "From $84,900", i: G + "g18.jpg", u: "product.html", k: "farm ag storage 40x80 hay barn" },
-    { t: "Horse barns & riding arenas", v: "Equestrian · custom quote", p: "Get a quote", i: "assets/img/horse-barn-2.jpg", u: "#", k: "horse equestrian barn stall arena stable" },
-    { t: "Commercial pole buildings", v: "Retail, office, brewery", p: "Get a quote", i: "assets/img/com-2.jpg", u: "#", k: "commercial business retail office brewery winery warehouse" },
-    { t: "Materials-only building kits", v: "Pick up or delivery", p: "Kits from $11,900", i: "assets/img/framing-crew.jpg", u: "product.html", k: "kit materials diy steel trim panels" },
+    { t: "40' x 64' x 14' Shop with Porch", v: "Workshop", p: "From $61,900", i: "assets/img/products/shop-porch.jpg", u: "product.html", k: "workshop shop porch 40x64 business" },
+    { t: "36' x 72' x 14' RV & Boat Storage", v: "Storage", p: "From $71,500", i: "assets/img/products/rv-storage.jpg", u: "product.html", k: "rv boat storage 36x72 camper" },
+    { t: "40' x 80' x 16' Farm Storage", v: "Farm & ag", p: "From $84,900", i: "assets/img/products/farm-storage.jpg", u: "product.html", k: "farm ag storage 40x80 hay barn" },
+    { t: "Horse barns & riding arenas", v: "Equestrian · custom quote", p: "Get a quote", i: "assets/img/cat/equestrian.jpg", u: "#", k: "horse equestrian barn stall arena stable" },
+    { t: "Commercial pole buildings", v: "Retail, office, brewery", p: "Get a quote", i: "assets/img/cat/commercial.jpg", u: "#", k: "commercial business retail office brewery winery warehouse" },
+    { t: "Materials-only building kits", v: "Pick up or delivery", p: "Kits from $11,900", i: "assets/img/stock/bento-kit.jpg", u: "product.html", k: "kit materials diy steel trim panels" },
   ];
   const esc = (s) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const hl = (s, q) => { const e = esc(s); if (!q) return e; const i = e.toLowerCase().indexOf(q); return i < 0 ? e : e.slice(0, i) + "<mark>" + e.slice(i, i + q.length) + "</mark>" + e.slice(i + q.length); };
