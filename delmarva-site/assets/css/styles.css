@@ -75,7 +75,7 @@ input, select { font: inherit; color: inherit; }
 .header__top { display: grid; grid-template-columns: 1fr minmax(280px, 500px) 1fr; align-items: center; gap: 24px; height: 72px; }
 .header__left { display: flex; align-items: center; gap: 16px; }
 .logo { display: inline-flex; align-items: center; gap: 10px; }
-.logo img { height: 44px; width: auto; }
+.logo img { height: 48px; width: auto; }
 .logo__word { font-size: 25px; font-weight: 600; letter-spacing: -.02em; line-height: 1; }
 .logo__word small { display: block; font-size: 9.5px; letter-spacing: .32em; font-weight: 600; margin-top: 3px; color: var(--ink-2); }
 .burger { display: none; width: 36px; height: 36px; align-items: center; justify-content: center; }
