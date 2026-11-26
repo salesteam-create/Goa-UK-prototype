@@ -1,0 +1,80 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <h4>Buildings</h4>
+        <ul><li><a href="product.html">Garages</a></li><li><a href="product.html">Workshops</a></li><li><a href="#">Farm &amp; Ag</a></li><li><a href="#">Equestrian</a></li><li><a href="#">Commercial</a></li><li><a href="#barndos">Barndo Homes</a></li><li><a href="#kits">Kits &amp; Materials</a></li></ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul><li><a href="#">Get a quote</a></li><li><a href="#design">3D Designer</a></li><li><a href="#financing">Financing</a></li><li><a href="#">FAQ</a></li><li><a href="#">Permits &amp; site prep</a></li><li><a href="#">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Delmarva Difference</h4>
+        <ul><li><a href="#">20-Year Leak-Free Guarantee</a></li><li><a href="#">Lifetime Structural Warranty</a></li><li><a href="#">5-Year Workmanship Warranty</a></li><li><a href="#">Price Match Guarantee</a></li><li><a href="#">About us</a></li><li><a href="#">Reviews</a></li></ul>
+      </div>
+      <div>
+        <h4>Get the free pole barn price guide</h4>
+        <p style="margin:0;font-size:13.5px;color:var(--ink-2)">Real price ranges for 12 popular sizes, plus what changes the cost. One email, no spam.</p>
+        <form class="newsletter" onsubmit="this.querySelector('button').textContent='Sent ✓';return false"><label class="sr-only" for="nl">Email</label><input id="nl" type="email" placeholder="Email address" required><button type="submit">Get the guide</button></form>
+        <p style="margin:18px 0 0;font-size:13.5px;line-height:1.7">
+          <b>Delaware HQ</b> · 317 N. Layton Ave., Wyoming, DE 19934 · <a href="tel:13026983636">302-698-3636</a><br>
+          <b>Ohio office</b> · 425 W Light St., Urbana, OH 43078 · <a href="tel:19376881616">937-688-1616</a><br>
+          Mon to Fri, 7:30am to 4:30pm
+        </p>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+        <span>© 2026 Delmarva Buildings</span>
+        <div class="socials">
+          <a href="https://www.facebook.com/ilovepolebuildings/" aria-label="Facebook"><svg class="icon"><use href="#i-fb"/></svg></a>
+          <a href="https://www.youtube.com/c/Ilovepolebuildings" aria-label="YouTube"><svg class="icon"><use href="#i-yt"/></svg></a>
+          <a href="https://www.instagram.com/ilovepolebuildings/" aria-label="Instagram"><svg class="icon"><use href="#i-ig"/></svg></a>
+          <a href="https://www.pinterest.com/polebuildings/" aria-label="Pinterest"><svg class="icon"><use href="#i-pin2"/></svg></a>
+        </div>
+      </div>
+      <div class="pay" aria-label="Payment methods"><span>VISA</span><span>MC</span><span>AMEX</span><span>DISCOVER</span><span>Shop Pay</span><span>ACH</span></div>
+    </div>
+    <div class="wordmark" aria-hidden="true">DELMARVA</div>
+  </div>
+</footer>
+
+<button class="totop" aria-label="Back to top"><svg class="icon"><use href="#i-up"/></svg></button>
+<div class="proto-note">Prototype · kit &amp; build prices are samples</div>
+
+<!-- Building finder quiz (CRO: guided selection) -->
+<div class="modal" id="quiz" role="dialog" aria-modal="true" aria-label="Find your building">
+  <div class="modal__box">
+    <button class="modal__close iconbtn" data-close aria-label="Close"><svg class="icon"><use href="#i-x"/></svg></button>
+    <div class="quiz-progress"><i></i></div>
+    <div class="quiz-step" data-q="use"><p class="eyebrow">Question 1 of 3</p><h3>What will you use it for?</h3>
+      <div class="quiz-opts"><button data-a="garage">Garage or storage</button><button data-a="shop">Workshop</button><button data-a="farm">Farm, ag or horses</button><button data-a="home">A home to live in</button></div></div>
+    <div class="quiz-step" data-q="size" hidden><p class="eyebrow">Question 2 of 3</p><h3>Roughly how big?</h3>
+      <div class="quiz-opts"><button data-a="small">1 to 2 cars (about 24' x 24')</button><button data-a="mid">3 cars or a shop (about 30' x 40')</button><button data-a="big">Equipment or RV (40' x 60' +)</button><button data-a="unsure">Not sure yet</button></div></div>
+    <div class="quiz-step" data-q="path" hidden><p class="eyebrow">Question 3 of 3</p><h3>Who's building it?</h3>
+      <div class="quiz-opts"><button data-a="built">Delmarva builds it for me</button><button data-a="kit">I'll build it (kit only)</button></div></div>
+    <div class="quiz-step" hidden><p class="eyebrow">Our recommendation</p><h3 data-rec-title>—</h3><p data-rec-price class="muted" style="margin:-8px 0 20px"></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn--brand" data-rec-link href="product.html">See price &amp; options</a><button class="btn btn--ghost" data-close>Keep browsing</button></div></div>
+  </div>
+</div>
+
+<div class="modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Video"><div class="modal__box" style="width:min(900px,100%);padding:0"></div></div>
+
+<!-- Reserve drawer (CRO: refundable deposit + short form) -->
+<aside class="drawer" id="reserve-drawer" aria-label="Reserve your build">
+  <div class="drawer__head"><h3>Reserve your build slot</h3><button class="iconbtn" data-close aria-label="Close"><svg class="icon"><use href="#i-x"/></svg></button></div>
+  <div class="drawer__body">
+    <p style="margin-top:0;font-size:14px">A <b>$500 refundable deposit</b> holds your price and puts you on the build calendar. It's fully refunded if you don't go ahead after your free site visit, and credited to your build if you do.</p>
+    <form onsubmit="this.innerHTML='<p><b>You\'re on the calendar.</b> A building consultant will call within 1 business day to book your site visit.</p>';return false">
+      <div class="field"><label for="r-name">Full name</label><input id="r-name" autocomplete="name" required></div>
+      <div class="field"><label for="r-email">Email</label><input id="r-email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="r-phone">Phone</label><input id="r-phone" type="tel" autocomplete="tel" required></div>
+      <div class="field"><label for="r-zip">Build site zip</label><input id="r-zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" required></div>
+      <button class="btn btn--brand btn--block" type="submit">Continue to secure checkout</button>
+      <p class="muted" style="font-size:12.5px;margin:10px 0 0">Prefer to talk first? Call <a class="link-u" href="tel:18667344811">866-734-4811</a>, Mon to Fri 7:30 to 4:30.</p>
+    </form>
+  </div>
+</aside>
+
+<script src="assets/js/main.js"></script>
