@@ -245,7 +245,14 @@
   $$("[data-quotes]").forEach((root) => {
     const qs = $$("blockquote", root); const dots = root.querySelector(".dots"); let i = 0;
     qs.forEach((_, k) => { const b = document.createElement("button"); b.setAttribute("aria-label", "Review " + (k + 1)); b.onclick = () => go(k); dots.appendChild(b); });
-    const go = (k) => { i = (k + qs.length) % qs.length; qs.forEach((q, n) => (q.hidden = n !== i)); $$("button", dots).forEach((d, n) => d.classList.toggle("is-on", n === i)); };
+    const logo = root.querySelector(".press__logo");
+    const go = (k) => {
+      i = (k + qs.length) % qs.length;
+      qs.forEach((q, n) => { q.hidden = n !== i; if (n === i) { q.classList.remove("is-in"); void q.offsetWidth; q.classList.add("is-in"); } });
+      $$("button", dots).forEach((d, n) => d.classList.toggle("is-on", n === i));
+      const src = qs[i].dataset.logo;
+      if (logo && src && logo.getAttribute("src") !== src) { logo.classList.add("is-out"); setTimeout(() => { logo.setAttribute("src", src); logo.classList.remove("is-out"); }, 220); }
+    };
     root.querySelector("[data-q-next]").onclick = () => go(i + 1);
     root.querySelector("[data-q-prev]").onclick = () => go(i - 1);
     go(0); setInterval(() => go(i + 1), 8000);

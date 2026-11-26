@@ -959,3 +959,11 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
 .press__logos { list-style: none; margin: 0 auto 26px; padding: 0; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 14px 36px; }
 .press__logos img { height: 40px; width: auto; object-fit: contain; }
 @media (max-width: 760px) { .press__logos { gap: 12px 22px; } .press__logos img { height: 30px; } }
+
+/* Quote slider: source logo swaps with each testimonial */
+.press__logo-slot { height: 56px; display: grid; place-items: center; margin: 0 auto 22px; }
+.press__logo { height: 52px !important; width: auto; margin: 0 !important; transition: opacity .22s, transform .22s; }
+.press__logo.is-out { opacity: 0; transform: translateY(6px); }
+.press blockquote.is-in { animation: qin .45s ease; }
+@keyframes qin { from { opacity: 0; transform: translateY(8px); } }
+@media (max-width: 760px) { .press__logo-slot { height: 44px; } .press__logo { height: 40px !important; } }
