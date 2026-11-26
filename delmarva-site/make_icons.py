@@ -6,8 +6,8 @@ A = Path(sys.argv[1])  # .../package/assets
 M = {
  "i-search": ("magnifying-glass", "regular"), "i-user": ("user-circle", "regular"),
  "i-cart": ("shopping-cart-simple", "regular"), "i-pin": ("map-pin", "regular"),
- "i-down": ("caret-down", "regular"), "i-right": ("arrow-right", "regular"),
- "i-left": ("arrow-left", "regular"), "i-up": ("arrow-up", "regular"),
+ "i-down": ("caret-down", "light"), "i-right": ("arrow-right", "light"),
+ "i-left": ("arrow-left", "light"), "i-up": ("arrow-up", "light"), "i-lr": ("arrows-left-right", "light"),
  "i-phone": ("phone", "regular"), "i-check": ("check", "bold"), "i-x": ("x", "regular"),
  "i-menu": ("list", "regular"), "i-play": ("play", "fill"), "i-chat": ("chat-circle", "duotone"),
  "i-shield": ("shield-check", "duotone"), "i-truck": ("truck", "duotone"),
