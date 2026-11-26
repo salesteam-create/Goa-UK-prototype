@@ -194,7 +194,10 @@
       const fr = document.createElement("iframe");
       fr.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${id}&playsinline=1&modestbranding=1&rel=0&enablejsapi=1`;
       fr.allow = "autoplay; encrypted-media; picture-in-picture"; fr.title = r.dataset.title; fr.tabIndex = -1;
-      fr.addEventListener("load", () => { fr.classList.add("is-on"); if (!muted) send(fr, "unMute"); });
+      fr.addEventListener("load", () => { try { fr.contentWindow.postMessage(JSON.stringify({ event: "listening", id: 1 }), "*"); } catch (e) {} });
+      /* Only fade the video in once YouTube reports it is ready, so a blocked embed keeps the still photo */
+      const onMsg = (e) => { if (e.source !== fr.contentWindow || !/youtube/.test(e.origin)) return; fr.classList.add("is-on"); if (!muted) send(fr, "unMute"); window.removeEventListener("message", onMsg); };
+      window.addEventListener("message", onMsg);
       r.appendChild(fr);
       const m = document.createElement("span"); m.className = "reel__mute"; m.setAttribute("role", "button"); m.tabIndex = 0;
       const paint = () => { m.innerHTML = muted ? '<svg viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="m16 9 5 6m0-6-5 6"/></svg>' : '<svg viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>'; m.setAttribute("aria-label", muted ? "Unmute video" : "Mute video"); };
