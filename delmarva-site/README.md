@@ -43,3 +43,5 @@ Open `index.html` (home) or `product.html` (30' x 40' x 12' garage) in a browser
 ## Stock photo credits (Unsplash License, free for commercial use)
 Category cards in `assets/img/cat/`: Garages, Salvo Media LLC · Workshops, Mathias Reding · Farm & Ag, Holly Landkammer ·
 Equestrian, Brian Wangenheim · Commercial, Syahfira Puri · Barndo Homes, Cole Ankney.
+
+Other stock photos in `assets/img/stock/` (Unsplash License): region-de: Roger Starnes Sr, region-md: Jason Gooljar, region-va: Uros Petrovic, region-oh: chris robert, plan-finance: Jakub Zerdzicki, plan-options: Angelica Teran, plan-how: Marina Zvada, duo-business: Roger Starnes Sr, duo-home: GoodLifeConstruction, bento-built: Roger Starnes Sr, bento-kit: @skstrannik, bento-barndo: GoodLifeConstruction, reel-garage: Brian Wangenheim, reel-horse: Andres Molina, reel-pricematch: Roger Starnes Sr, reel-story: Roger Starnes Sr, reel-concrete: Markus Kammermann, reel-siteprep: Defrino Maasy, reel-team: @skstrannik.
