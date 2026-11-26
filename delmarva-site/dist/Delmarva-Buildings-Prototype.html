@@ -967,6 +967,11 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
 .rating-summary { margin-bottom: 30px; }
 @media (max-width: 760px) { .gbadge--inline { padding: 6px 14px 6px 8px !important; gap: 10px !important; } .gbadge--inline .gbadge__g { width: 32px !important; height: 32px !important; } .gbadge--inline .gbadge__label { display: block !important; font-size: 14px; } .gbadge--inline .gstar { width: 15px !important; height: 15px !important; } .gbadge--inline .gstar--half b svg { width: 15px !important; } .gbadge--inline .gbadge__score { font-size: 14px !important; } }
 
+/* Review platform logos above the quote slider */
+.press__logos { list-style: none; margin: 0 auto 26px; padding: 0; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 14px 36px; }
+.press__logos img { height: 40px; width: auto; object-fit: contain; }
+@media (max-width: 760px) { .press__logos { gap: 12px 22px; } .press__logos img { height: 30px; } }
+
 html { scroll-behavior: auto; }
 </style>
 </head>
@@ -1435,6 +1440,7 @@ html { scroll-behavior: auto; }
 
 <!-- 15. PRESS QUOTE SLIDER → GOOGLE REVIEWS -->
 <section class="press container" data-quotes aria-label="What customers say">
+  <ul class="press__logos" aria-label="Rated on"><li><img src="data:," data-k="assets/img/logo-google.png" alt="Google reviews"></li><li><img src="data:," data-k="assets/img/logo-bbb.png" alt="BBB A+ accredited"></li><li><img src="data:," data-k="assets/img/logo-nextdoor.png" alt="Nextdoor Neighborhood Fave"></li><li><img src="data:," data-k="assets/img/logo-angi.png" alt="Angi"></li><li><img src="data:," data-k="assets/img/logo-toprated.png" alt="Top Rated Local"></li></ul>
   <blockquote>“Everyone was very pleasant to talk to and be around. Had a beautiful building built by this company and I can say they do great quality work.”<cite>Verified Google review · March 2025</cite></blockquote>
   <blockquote hidden>“Very pleased with my building. You always fixed any concerns I had and made sure it was done fast. Have told many people about the building and your work.”<cite>Verified Google review · February 2025</cite></blockquote>
   <blockquote hidden>“Delmarva made a pavilion for our meadery. We couldn't be happier with how it turned out and all the help they gave us with the county red tape.”<cite>Business customer · Google review</cite></blockquote>
