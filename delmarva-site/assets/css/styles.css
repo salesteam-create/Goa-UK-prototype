@@ -803,3 +803,8 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
 .press__nav { width: 46px; height: 46px; border-radius: 50%; background: #fff; box-shadow: var(--shadow); display: grid; place-items: center; z-index: 3; transition: transform .2s, box-shadow .2s; }
 .press__nav:hover { background: #fff; transform: translateY(-50%) scale(1.06); box-shadow: 0 12px 30px rgba(20,20,18,.14); }
 .press__nav .icon { width: 20px; height: 20px; }
+/* Achievement badges: bigger and more readable */
+.statement__badge { width: clamp(220px, 17vw, 300px) !important; padding: 16px; border-radius: 30px; }
+.statement__badge.is-dark { padding: 0; }
+.statement__badge[style*="left:79%"], .statement__badge[style*="left:78%"] { left: auto !important; right: 6%; }
+@media (max-width: 760px) { .statement__badge { width: 44vw !important; padding: 10px; } }
