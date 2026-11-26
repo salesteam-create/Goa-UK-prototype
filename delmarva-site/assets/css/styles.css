@@ -158,12 +158,12 @@ input, select { font: inherit; color: inherit; }
 .dots button.is-on { background: var(--ink); }
 
 /* ---------- Shop by department (circles) ---------- */
-.depts { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; max-width: 1080px; margin: 0 auto; }
-.dept { text-align: center; }
-.dept__img { aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--soft); margin: 0 auto 12px; width: 100%; max-width: 150px; }
+.depts { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 6px; }
+.dept { display: block; text-align: left; }
+.dept__img { position: relative; aspect-ratio: 4/5; border-radius: 2px; overflow: hidden; background: var(--soft); margin: 0 0 12px; width: 100%; }
 .dept__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
 .dept:hover .dept__img img { transform: scale(1.07); }
-.dept span { font-size: 14.5px; }
+.dept span { display: flex; justify-content: space-between; align-items: center; font-size: 15px; }
 .dept small { display: block; color: var(--muted); font-size: 12.5px; }
 
 /* ---------- Bento tiles ---------- */
@@ -521,7 +521,7 @@ input, select { font: inherit; color: inherit; }
   .nav { display: none; }
   .burger { display: inline-flex; }
   .header__top { grid-template-columns: auto 1fr auto; }
-  .depts { grid-template-columns: repeat(3, 1fr); row-gap: 26px; }
+  .depts { grid-template-columns: repeat(3, minmax(0,1fr)); row-gap: 22px; }
   .rail__track { grid-auto-columns: calc((100% - 6px) / 2.2); }
   .reviews { grid-auto-columns: 80%; }
   .quote-cards { grid-auto-columns: 75%; }
@@ -688,3 +688,6 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
 .badges--sm img { max-height: calc(var(--bw) - 10px); }
 .badges li:has(img[src*="years-25"]) img { max-height: var(--bw); }
 @media (prefers-reduced-motion: reduce) { .statement { height: auto; } .statement__pin { position: static; height: auto; padding: 110px 0; } .statement__float { display: none; } }
+.dept span::after { content: "→"; opacity: 0; transform: translateX(-6px); transition: .25s; }
+.dept:hover span::after { opacity: 1; transform: none; }
+@media (max-width: 760px) { .depts { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 42%; overflow-x: auto; scrollbar-width: none; } .depts::-webkit-scrollbar { display: none; } }
