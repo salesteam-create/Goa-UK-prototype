@@ -917,3 +917,14 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
   .gbadge__score { font-size: 12px; }
 }
 @media (max-width: 760px) { .tile__copy--center { left: 16px; right: 16px; top: 50%; transform: translateY(-50%); } }
+
+/* Announcement bar: scrolling marquee on phones */
+.announce__marquee { display: none; }
+@media (max-width: 760px) {
+  .announce .container { display: none; }
+  .announce__marquee { display: block; overflow: hidden; height: 32px; }
+  .announce__track { display: flex; width: max-content; height: 32px; align-items: center; animation: marq 28s linear infinite; }
+  .announce__track span { white-space: nowrap; font-size: 12.5px; font-weight: 600; padding: 0 22px; position: relative; }
+  .announce__track span::after { content: "•"; position: absolute; right: -3px; opacity: .55; }
+}
+@media (max-width: 760px) and (prefers-reduced-motion: reduce) { .announce__track { animation: none; } }
