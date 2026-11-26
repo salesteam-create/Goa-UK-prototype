@@ -691,3 +691,11 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
 .dept span::after { content: "→"; opacity: 0; transform: translateX(-6px); transition: .25s; }
 .dept:hover span::after { opacity: 1; transform: none; }
 @media (max-width: 760px) { .depts { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 42%; overflow-x: auto; scrollbar-width: none; } .depts::-webkit-scrollbar { display: none; } }
+
+/* Badges floating through the pinned statement section */
+.statement__badge { aspect-ratio: 1 !important; display: grid; place-items: center; padding: 22px; background: #fff; border-radius: 28px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 30px 60px -24px rgba(0,0,0,.28); }
+.statement__badge img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.statement__badge.is-blue { background: #a8bcdc; }
+.statement__badge.is-dark { background: #262626; padding: 0; overflow: hidden; }
+@media (max-width: 760px) { .statement__badge { width: 38vw !important; padding: 14px; border-radius: 20px; } }
