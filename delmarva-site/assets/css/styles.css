@@ -799,3 +799,7 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
 .press__nav { width: 44px; height: 44px; border-radius: 50%; transform: translateY(-50%); }
 .press__nav:hover { background: var(--soft); }
 .press__nav[data-q-prev] { left: 8px !important; } .press__nav[data-q-next] { right: 8px !important; }
+/* Review slider arrows: same round white buttons as the carousels */
+.press__nav { width: 46px; height: 46px; border-radius: 50%; background: #fff; box-shadow: var(--shadow); display: grid; place-items: center; z-index: 3; transition: transform .2s, box-shadow .2s; }
+.press__nav:hover { background: #fff; transform: translateY(-50%) scale(1.06); box-shadow: 0 12px 30px rgba(20,20,18,.14); }
+.press__nav .icon { width: 20px; height: 20px; }
