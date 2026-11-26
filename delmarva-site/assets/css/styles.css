@@ -790,3 +790,7 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
 .reel__mute:hover { background: rgba(20,20,20,.75); }
 .reels__dots { padding-top: 22px; }
 .reels__dots button { width: 7px; height: 7px; }
+/* Header: no bottom border, soft shadow (Nook) */
+.header, .header.is-scrolled { border-bottom: 0 !important; }
+.header { transition: box-shadow .25s; }
+.header.is-scrolled { box-shadow: 0 6px 18px -8px rgba(0,0,0,.14); }
