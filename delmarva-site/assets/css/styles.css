@@ -761,3 +761,10 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
   .footer__grid > * { min-width: 0; }
 }
 @media (max-width: 760px) { .gbadge { bottom: auto; top: 10px; right: var(--gutter); } }
+
+/* Four promises picture: full page width (to the margins) */
+.feature__hero { max-width: none !important; }
+.feature__hero > img { width: 100%; aspect-ratio: auto; height: clamp(320px, 40vw, 720px); object-fit: cover; object-position: 50% 62%; }
+@media (min-width: 761px) and (prefers-reduced-motion: no-preference) {
+  .feature--pin .feature__hero > img { height: clamp(300px, calc(100vh - 480px), 640px); object-position: 50% 88%; }
+}
