@@ -176,8 +176,9 @@
       if (card && best) { card.querySelector("[data-rc-title]").textContent = best.dataset.title; card.querySelector("[data-rc-meta]").textContent = best.dataset.meta; card.querySelector("img").src = best.querySelector("img").src; }
     };
     track.addEventListener("scroll", () => requestAnimationFrame(center), { passive: true });
-    root.querySelector(".rail__next")?.addEventListener("click", () => track.scrollBy({ left: 222, behavior: "smooth" }));
-    root.querySelector(".rail__prev")?.addEventListener("click", () => track.scrollBy({ left: -222, behavior: "smooth" }));
+    const stepW = () => (reels[0] ? reels[0].offsetWidth + parseFloat(getComputedStyle(track).columnGap || 24) : 240);
+    root.querySelector(".rail__next")?.addEventListener("click", () => track.scrollBy({ left: stepW(), behavior: "smooth" }));
+    root.querySelector(".rail__prev")?.addEventListener("click", () => track.scrollBy({ left: -stepW(), behavior: "smooth" }));
     setTimeout(() => { track.scrollLeft = (track.scrollWidth - track.clientWidth) / 2; center(); }, 60);
     reels.forEach((r) => r.addEventListener("click", () => {
       const m = $("#video-modal"); if (!m) return;
