@@ -643,3 +643,20 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
 .usp .icon { width: 48px; height: 48px; color: var(--ink); }
 .trustrow .icon { width: 32px; height: 32px; color: var(--ink); }
 .usp .icon .d, .trustrow .icon .d { display: none; }
+
+/* Hero slide with copy over a bright sky (dark text, top-aligned) */
+.hero__slide--sky::after { background: linear-gradient(180deg, rgba(255,255,255,.55) 0%, rgba(255,255,255,.18) 34%, rgba(255,255,255,0) 52%); }
+.hero__slide--sky .hero__copy { top: clamp(28px, 5vw, 64px); bottom: auto; color: var(--ink); }
+.hero__slide--sky .hero__copy .eyebrow { color: var(--ink-2); }
+.hero__slide--sky .hero__title { max-width: 22ch; margin-bottom: 10px; }
+.hero__slide--sky .hero__sub { max-width: 52ch; }
+.hero__slide--sky .link-u { color: var(--ink); }
+.hero__slide--sky .hero__rating { margin-top: 14px; }
+@media (max-width: 760px) { .hero__slide--sky .hero__title { font-size: 30px; } .hero__slide--sky .hero__sub { display: none; } .hero__slide--sky img { object-position: 60% 100% !important; } }
+.hero__slide--sky .hero__sub { display: none; }
+.hero__slide--sky .hero__title { max-width: 20ch; font-size: clamp(30px, 3.9vw, 58px); }
+.hero__slide--sky .hero__copy .container { display: grid; justify-items: start; }
+.hero__slide--sky .hero__ctas { margin-top: 6px; }
+.hero__slide--sky .hero__rating { margin-top: 12px; }
+.logo img { max-width: none; flex: none; }
+.hero__slide--sky .hero__rating { background: rgba(255,255,255,.82); backdrop-filter: blur(6px); padding: 6px 12px; border-radius: var(--radius-pill); }
