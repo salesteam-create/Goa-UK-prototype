@@ -942,6 +942,19 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
 @media (max-width: 760px) and (prefers-reduced-motion: reduce) { .announce__track { animation: none; } }
 .atelier__shot { object-position: 100% 50%; }
 @media (max-width: 760px) { .atelier__shot { object-position: 30% 50%; } }
+/* 3D designer: diagonal yellow + dark stripes joining the text panel */
+.atelier__media::before, .atelier__media::after { content: ""; position: absolute; top: 0; bottom: 0; right: 0; width: 30%; z-index: 1; pointer-events: none; }
+.atelier__media::before { background: var(--brand); clip-path: polygon(8% 0, 46% 0, 100% 100%, 62% 100%); }
+.atelier__media::after { background: #232a33; clip-path: polygon(46% 0, 100% 0, 100% 100%); }
+.atelier__media img.atelier__shot { right: 13%; width: 87%; object-position: 100% 50%; }
+@media (max-width: 760px) {
+  .atelier__media::before, .atelier__media::after { width: 34%; }
+  .atelier__media img.atelier__shot { right: 0; width: 100%; object-position: 25% 50%; }
+}
+.atelier__media img.atelier__shot { right: 0; width: 100%; object-position: 18% 50%; }
+.atelier__media::before, .atelier__media::after { width: 34%; }
+.atelier__media::after { right: -1px; }
+.atelier__media { margin-right: -1px; }
 
 html { scroll-behavior: auto; }
 </style>
