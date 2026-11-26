@@ -191,14 +191,26 @@
   /* ---------- Hotspots (tap on touch) ---------- */
   $$(".spot").forEach((s) => s.querySelector(".spot__dot").addEventListener("click", (e) => { e.preventDefault(); const o = s.classList.contains("is-open"); $$(".spot.is-open").forEach((x) => x.classList.remove("is-open")); if (!o) s.classList.add("is-open"); }));
 
-  /* ---------- Statement floaters (subtle parallax) ---------- */
-  const st = $(".statement");
-  if (st) {
-    const fl = $$(".statement__float", st);
-    window.addEventListener("scroll", () => {
-      const r = st.getBoundingClientRect(); const p = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;
-      fl.forEach((f, k) => (f.style.transform = `translateY(${p * (k % 2 ? -80 : 80)}px) rotate(${k % 2 ? 4 : -5}deg)`));
-    }, { passive: true });
+  /* ---------- Statement: pinned section, photos rise from the bottom on scroll (Nook) ---------- */
+  const st = document.querySelector(".statement");
+  if (st && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const fl = Array.from(st.querySelectorAll(".statement__float"));
+    const tick = () => {
+      const r = st.getBoundingClientRect();
+      const span = Math.max(1, st.offsetHeight - innerHeight);
+      const prog = Math.min(1, Math.max(0, -r.top / span));
+      const n = fl.length, win = 0.42;
+      fl.forEach((f, k) => {
+        const start = (k / n) * (1 - win) * 1.08 - 0.04;
+        const tt = (prog - start) / win;
+        const y = (1 - tt) * (innerHeight + 60) - tt * (f.offsetHeight + 60);
+        f.style.transform = "translate3d(0," + y + "px,0) rotate(var(--r))";
+        f.style.opacity = tt > -0.05 && tt < 1.05 ? 1 : 0;
+      });
+    };
+    window.addEventListener("scroll", () => requestAnimationFrame(tick), { passive: true });
+    window.addEventListener("resize", tick);
+    tick();
   }
 
   /* ---------- Quote slider (press) ---------- */
