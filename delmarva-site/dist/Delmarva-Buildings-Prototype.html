@@ -955,6 +955,17 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
 .atelier__media::before, .atelier__media::after { width: 34%; }
 .atelier__media::after { right: -1px; }
 .atelier__media { margin-right: -1px; }
+/* 3D designer image: zoom in on the building, keep the control panel out of frame */
+.atelier__media { overflow: hidden; }
+.atelier__media img.atelier__shot { object-position: 0% 50%; transform: scale(1.32); transform-origin: 12% 46%; }
+@media (max-width: 760px) { .atelier__media img.atelier__shot { transform: scale(1.25); transform-origin: 22% 50%; } }
+@media (max-width: 760px) { .atelier__media img.atelier__shot { transform: scale(1.2); transform-origin: 0% 50%; object-position: 8% 50%; } }
+@media (max-width: 760px) { .atelier__media::before, .atelier__media::after { width: 24%; } .atelier__media img.atelier__shot { transform: scale(1.1); transform-origin: 0% 50%; object-position: 4% 50%; } }
+
+/* Google badge reused above the review cards */
+.gbadge--inline { position: static !important; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 8px 24px -10px rgba(0,0,0,.22); border: 1px solid var(--line); }
+.rating-summary { margin-bottom: 30px; }
+@media (max-width: 760px) { .gbadge--inline { padding: 6px 14px 6px 8px !important; gap: 10px !important; } .gbadge--inline .gbadge__g { width: 32px !important; height: 32px !important; } .gbadge--inline .gbadge__label { display: block !important; font-size: 14px; } .gbadge--inline .gstar { width: 15px !important; height: 15px !important; } .gbadge--inline .gstar--half b svg { width: 15px !important; } .gbadge--inline .gbadge__score { font-size: 14px !important; } }
 
 html { scroll-behavior: auto; }
 </style>
@@ -1454,7 +1465,7 @@ html { scroll-behavior: auto; }
 <section class="section" aria-labelledby="rev-h">
   <div class="container">
     <h2 class="sr-only" id="rev-h">Customer reviews</h2>
-    <div class="rating-summary"><b>4.5</b><span class="stars" aria-hidden="true">★★★★½</span><span>471 Google reviews · BBB A+ accredited</span></div>
+    <div class="rating-summary"><a class="gbadge gbadge--inline" href="https://www.google.com/maps/place/Delmarva+Buildings/@39.1216966,-75.5538594,17z" target="_blank" rel="noopener" aria-label="Rated 4.5 out of 5 from 471 Google reviews"><svg class="gbadge__g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span class="gbadge__txt"><span class="gbadge__label">Reviews</span><span class="gbadge__row"><span class="gstars" aria-hidden="true"><i class="gstar"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.94 6.1 6.56.9-4.78 4.6 1.17 6.6L12 17.6l-5.89 3.1 1.17-6.6L2.5 9.5l6.56-.9z"/></svg></i><i class="gstar"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.94 6.1 6.56.9-4.78 4.6 1.17 6.6L12 17.6l-5.89 3.1 1.17-6.6L2.5 9.5l6.56-.9z"/></svg></i><i class="gstar"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.94 6.1 6.56.9-4.78 4.6 1.17 6.6L12 17.6l-5.89 3.1 1.17-6.6L2.5 9.5l6.56-.9z"/></svg></i><i class="gstar"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.94 6.1 6.56.9-4.78 4.6 1.17 6.6L12 17.6l-5.89 3.1 1.17-6.6L2.5 9.5l6.56-.9z"/></svg></i><i class="gstar gstar--half"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.94 6.1 6.56.9-4.78 4.6 1.17 6.6L12 17.6l-5.89 3.1 1.17-6.6L2.5 9.5l6.56-.9z"/></svg><b><svg viewBox="0 0 24 24"><path d="M12 2.5l2.94 6.1 6.56.9-4.78 4.6 1.17 6.6L12 17.6l-5.89 3.1 1.17-6.6L2.5 9.5l6.56-.9z"/></svg></b></i></span><span class="gbadge__score">4.5/5</span></span></span></a></div>
     <div class="reviews">
       <article class="review"><h4>Easy from start to finish</h4><p>The building is wonderful. The process was easy and I was told what step was next. The people I dealt with were nice and listened to my concerns.</p><div class="review__who"><img src="data:," data-k="assets/img/gallery/g27.jpg" alt=""><div>Scott B., verified customer<br><span class="stars">★★★★</span></div></div></article>
       <article class="review"><h4>Above and beyond</h4><p>They built a pavilion for our meadery. David, Aaron and Jon went above and beyond to help with all the red tape from the county.</p><div class="review__who"><img src="data:," data-k="assets/img/com-3.jpg" alt=""><div>Business owner, verified<br><span class="stars">★★★★★</span></div></div></article>
