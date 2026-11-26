@@ -742,3 +742,12 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
   .gstar { width: 13px; height: 13px; } .gstar--half b svg { width: 13px; }
   .gbadge__score { font-size: 13px; }
 }
+/* Google badge: tighter */
+.gbadge { gap: 10px; padding: 6px 14px 6px 8px; right: clamp(16px, 2vw, 32px); bottom: 28px; }
+.gbadge__g { width: 36px; height: 36px; }
+.gbadge__txt { gap: 0; }
+.gbadge__label { font-size: 15px; }
+.gbadge__row { gap: 8px; }
+.gstar { width: 16px; height: 16px; } .gstar--half b svg { width: 16px; }
+.gbadge__score { font-size: 15px; }
+@media (max-width: 760px) { .gbadge { padding: 4px 10px 4px 6px; gap: 6px; top: 10px; right: 10px; } .gbadge__g { width: 22px; height: 22px; } .gstar { width: 12px; height: 12px; } .gstar--half b svg { width: 12px; } }
