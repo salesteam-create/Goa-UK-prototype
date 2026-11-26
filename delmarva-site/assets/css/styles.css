@@ -928,3 +928,5 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
   .announce__track span::after { content: "•"; position: absolute; right: -3px; opacity: .55; }
 }
 @media (max-width: 760px) and (prefers-reduced-motion: reduce) { .announce__track { animation: none; } }
+.atelier__shot { object-position: 100% 50%; }
+@media (max-width: 760px) { .atelier__shot { object-position: 30% 50%; } }
