@@ -377,31 +377,19 @@
   panel.addEventListener("click", (e) => { const a = e.target.closest("a"); if (a && a.getAttribute("href") !== "#") close(); });
 })();
 
-/* ---------- Four promises: pinned stage, cards rise over the picture on scroll ---------- */
+/* ---------- Four promises: cards rise over the full picture as the section scrolls in ---------- */
 (function () {
   const sec = document.querySelector(".feature--pin");
   if (!sec) return;
   const mq = matchMedia("(min-width: 761px) and (prefers-reduced-motion: no-preference)");
-  const head = sec.querySelector(".feature__head");
-  const hero = sec.querySelector(".feature__hero");
   const cards = sec.querySelector(".feature__cards");
-  const btn = sec.querySelector(".btn");
   const ease = (x) => 1 - Math.pow(1 - x, 3);
-  const reset = () => [head, hero, cards, btn].forEach((el) => { el.style.transform = ""; el.style.opacity = ""; });
   const tick = () => {
-    if (!mq.matches) return reset();
-    const r = sec.getBoundingClientRect();
-    const span = Math.max(1, sec.offsetHeight - innerHeight);
-    const p = Math.min(1, Math.max(0, -r.top / span));
-    const lift = head.offsetHeight + 28;
-    const up = ease(Math.min(1, p / 0.55));
-    head.style.transform = "translateY(" + (-lift * up) + "px)";
-    head.style.opacity = String(1 - up);
-    hero.style.transform = "translateY(" + (-lift * up) + "px)";
-    const c = ease(Math.min(1, Math.max(0, (p - 0.08) / 0.62)));
-    cards.style.transform = "translateY(" + ((1 - c) * innerHeight * 0.75 - lift * up) + "px)";
-    btn.style.transform = "translateY(" + (-lift * up) + "px)";
-    btn.style.opacity = p > 0.72 ? "1" : "0";
+    if (!mq.matches) { cards.style.transform = ""; return; }
+    const r = sec.querySelector(".feature__hero").getBoundingClientRect();
+    // 0 when the picture's bottom enters the screen, 1 when it reaches mid-screen
+    const p = Math.min(1, Math.max(0, (innerHeight - r.bottom) / (innerHeight * 0.55) + 0.15));
+    cards.style.transform = "translateY(" + ((1 - ease(p)) * 260) + "px)";
   };
   window.addEventListener("scroll", () => requestAnimationFrame(tick), { passive: true });
   window.addEventListener("resize", tick);

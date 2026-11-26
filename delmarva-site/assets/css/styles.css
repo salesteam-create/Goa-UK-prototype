@@ -768,3 +768,12 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
 @media (min-width: 761px) and (prefers-reduced-motion: no-preference) {
   .feature--pin .feature__hero > img { height: clamp(300px, calc(100vh - 480px), 640px); object-position: 50% 88%; }
 }
+
+/* Four promises: full 16:9 picture, section scrolls freely, cards rise over it */
+@media (min-width: 761px) {
+  .feature--pin { height: auto !important; padding: 70px 0 70px !important; overflow: hidden !important; }
+  .feature--pin .feature__stage { position: static !important; height: auto !important; display: block !important; padding-top: 0 !important; overflow: visible !important; }
+  .feature--pin .feature__hero > img, .feature__hero > img { height: auto !important; aspect-ratio: 16 / 9 !important; object-position: 50% 50% !important; }
+  .feature--pin .feature__cards { margin-top: -240px; }
+  .feature--pin .btn { opacity: 1 !important; }
+}
