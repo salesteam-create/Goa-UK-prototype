@@ -19,6 +19,12 @@ M = {
  "i-fb": ("facebook-logo", "regular"), "i-yt": ("youtube-logo", "regular"),
  "i-ig": ("instagram-logo", "regular"), "i-pin2": ("pinterest-logo", "regular"),
 }
+# Outline-only variants for feature icons: thin (8/256) shown at 48px and light (12/256) at 32px
+#  both render a 1.5px line.
+FEAT = {k: v[0] for k, v in M.items() if v[1] == "duotone"}
+for sid, name in FEAT.items():
+    M[sid + "-t"] = (name, "thin")
+    M[sid + "-l"] = (name, "light")
 out = ['<svg xmlns="http://www.w3.org/2000/svg" style="display:none">']
 for sid, (name, w) in M.items():
     f = A / w / (f"{name}.svg" if w == "regular" else f"{name}-{w}.svg")

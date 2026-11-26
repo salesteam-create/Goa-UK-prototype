@@ -638,3 +638,8 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
 .usp .icon { width: 44px; height: 44px; padding: 0; margin: 0 auto 14px; border-radius: 0; background: none; box-shadow: none; }
 .usp:hover .icon { transform: translateY(-2px); }
 .trustrow .icon { width: 28px; height: 28px; padding: 0; border-radius: 0; background: none; box-shadow: none; }
+
+/* Feature icons: outline only, 1.5px line, ink colour (no duotone fill) */
+.usp .icon { width: 48px; height: 48px; color: var(--ink); }
+.trustrow .icon { width: 32px; height: 32px; color: var(--ink); }
+.usp .icon .d, .trustrow .icon .d { display: none; }
