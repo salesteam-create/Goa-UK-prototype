@@ -56,6 +56,7 @@ for p in sorted(paths):
 # html: src -> data-k, data-img -> data-k-img (resolved at runtime)
 html = re.sub(r'src="(assets/img/[^"]+)"', r'src="data:," data-k="\1"', html)
 html = re.sub(r'data-img="(assets/img/[^"]+)"', r'data-img-k="\1"', html)
+html = re.sub(r'data-logo="(assets/img/[^"]+)"', r'data-logo-k="\1"', html)
 # js: string literals -> lookups
 js = re.sub(r'G \+ "(g\d\d\.jpg)"', r'__IMG["assets/img/gallery/\1"]', js)
 js = re.sub(r'"(assets/img/[A-Za-z0-9_./-]+\.(?:jpg|png|webp))"', r'__IMG["\1"]', js)
@@ -70,6 +71,7 @@ router = r"""
 (function () {
   document.querySelectorAll("[data-k]").forEach(function (el) { var v = __IMG[el.getAttribute("data-k")]; if (v) el.src = v; });
   document.querySelectorAll("[data-img-k]").forEach(function (el) { var v = __IMG[el.getAttribute("data-img-k")]; if (v) el.setAttribute("data-img", v); });
+  document.querySelectorAll("[data-logo-k]").forEach(function (el) { var v = __IMG[el.getAttribute("data-logo-k")]; if (v) el.setAttribute("data-logo", v); });
   var views = { home: document.querySelector('[data-view="home"]'), product: document.querySelector('[data-view="product"]') };
   function show(name, target) {
     var changed = views[name].hidden;
