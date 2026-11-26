@@ -39,3 +39,7 @@ Open `index.html` (home) or `product.html` (30' x 40' x 12' garage) in a browser
 - Kit and built prices (except barndo prices) are **samples**. Replace with Delmarva's real pricing.
 - Deposit amount, install windows, freight costs and zip-to-state logic are placeholders to confirm.
 - Re-export photos from the originals at full size; local copies are screenshot crops.
+
+## Stock photo credits (Unsplash License, free for commercial use)
+Category cards in `assets/img/cat/`: Garages, Salvo Media LLC · Workshops, Mathias Reding · Farm & Ag, Holly Landkammer ·
+Equestrian, Brian Wangenheim · Commercial, Syahfira Puri · Barndo Homes, Cole Ankney.
