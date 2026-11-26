@@ -670,3 +670,17 @@ img.wm { object-position: 50% 0 !important; transform-origin: 50% 0; transform: 
 .hero__copy { text-shadow: 0 1px 14px rgba(0,0,0,.35); }
 .hero__copy .btn { text-shadow: none; }
 @media (max-width: 760px) { .hero__slide::after { background: linear-gradient(0deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.45) 45%, rgba(0,0,0,.05) 75%); } }
+
+/* Warranty & accreditation badges */
+.badges { list-style: none; margin: 36px auto 0; padding: 0; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 18px; }
+.badges li { width: var(--bw); height: var(--bw); display: grid; place-items: center; background: #fff; border-radius: 16px; padding: 10px; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 10px 24px -16px rgba(0,0,0,.25); overflow: hidden; }
+.badges img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.badges li:has(img[src*="years-25"]) { background: #262626; padding: 0; }
+.badges li:has(img[src*="lifetime-structural"]) { background: #a8bcdc; }
+.badges--lg { --bw: 132px; }
+.badges--sm { --bw: 66px; gap: 8px; margin: 10px 0 4px; justify-content: space-between; }
+.badges--sm li { border-radius: 10px; padding: 5px; box-shadow: inset 0 0 0 1px var(--line); }
+@media (max-width: 760px) { .badges--lg { --bw: 96px; gap: 10px; } .badges--sm { --bw: 58px; } }
+.badges li { min-height: 0; } .badges img { width: auto; height: auto; max-height: calc(var(--bw) - 20px); }
+.badges--sm img { max-height: calc(var(--bw) - 10px); }
+.badges li:has(img[src*="years-25"]) img { max-height: var(--bw); }
