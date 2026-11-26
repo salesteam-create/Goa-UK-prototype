@@ -19,10 +19,11 @@
     <form class="search" role="search" onsubmit="return false">
       <label class="sr-only" for="q">Search</label>
       <svg class="icon"><use href="#i-search"/></svg>
-      <input id="q" type="search" placeholder="Search garages, barns, barndos, sizes…" autocomplete="off">
+      <input id="q" type="search" placeholder="Search garages, barns, barndos, sizes…" autocomplete="off" data-search-open readonly>
     </form>
     <div class="header__right">
       <button class="zipchip" data-drawer="zip-drawer" aria-label="Check your delivery area"><svg class="icon"><use href="#i-pin"/></svg><span>Build site:</span> <b data-zip-label>Enter zip</b><svg class="icon" style="width:14px;height:14px"><use href="#i-down"/></svg></button>
+      <button class="iconbtn search-m" data-search-open aria-label="Search"><svg class="icon"><use href="#i-search"/></svg></button>
       <a class="iconbtn" href="#" aria-label="Account"><svg class="icon"><use href="#i-user"/></svg></a>
       <a class="iconbtn" href="#" aria-label="Cart"><svg class="icon"><use href="#i-cart"/></svg><span class="badge-count">0</span></a>
     </div>
@@ -72,6 +73,29 @@
   </nav>
 </header>
 <div class="scrim" aria-hidden="true"></div>
+<!-- Search panel (Nook: trending searches overlay) -->
+<div class="spanel" id="search-panel" role="dialog" aria-modal="true" aria-label="Search" hidden>
+  <div class="container">
+    <form class="spanel__bar" role="search" onsubmit="return false">
+      <label class="sr-only" for="sq">Search Delmarva Buildings</label>
+      <div class="search spanel__field"><svg class="icon"><use href="#i-search"/></svg><input id="sq" type="search" placeholder="What are you building?" autocomplete="off"></div>
+      <button type="button" class="iconbtn spanel__close" data-search-close aria-label="Close search"><svg class="icon"><use href="#i-x"/></svg></button>
+    </form>
+    <p class="spanel__title" data-s-title>Trending searches</p>
+    <div class="spanel__grid">
+      <div>
+        <h4 data-s-head>Popular buildings</h4>
+        <div class="spanel__products" data-s-results></div>
+      </div>
+      <aside class="spanel__side">
+        <div><h4>Popular searches</h4><button data-s-term="30x40">30' x 40' garage</button><button data-s-term="barndo">Barndo under $200K</button><button data-s-term="horse">Horse barn</button><button data-s-term="kit">Materials-only kit</button></div>
+        <div><h4>Popular collections</h4><a href="product.html">Garages</a><a href="product.html">Workshops</a><a href="index.html#barndos">Barndo Homes</a><a href="#">Farm &amp; Ag</a><a href="#">Equestrian</a></div>
+        <div><h4>Useful links</h4><a href="#" data-drawer="zip-drawer">Check your delivery area</a><a href="https://design.ilovepolebuildings.com/">3D Designer</a><a href="index.html#financing">Financing</a><a href="index.html#difference">Warranties &amp; guarantees</a><a href="#">Get a quote</a><a href="tel:18667344811">Call 866-734-4811</a></div>
+      </aside>
+    </div>
+  </div>
+</div>
+
 
 <!-- Zip / build site drawer (mirrors Nook's localization drawer) -->
 <aside class="drawer" id="zip-drawer" aria-label="Check your build site">
